@@ -22,9 +22,14 @@ public class PlayerEventController : MonoBehaviour
             scoreText.text = score.ToString();
             Destroy(collision.gameObject);
         }
+        
         if (collision.gameObject.CompareTag("Enemy"))
         {
             PlayerPrefs.SetInt("score", score);
+            if (score > PlayerPrefs.GetInt("highscore"))
+            {
+                PlayerPrefs.SetInt("highscore", score);
+            }
             SceneManager.LoadScene(2);
         }
 

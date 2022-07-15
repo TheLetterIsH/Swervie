@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class LoseSceneController : MonoBehaviour
 {
-    [SerializeField] private Text scoreText;    
+    [SerializeField] private Text scoreText;
+    [SerializeField] private Text highscoreText;
 
     private void Start()
     {
         var score = PlayerPrefs.GetInt("score");
-        scoreText.text = score.ToString();
+        scoreText.text = "SCORE: " + score.ToString();
+        highscoreText.text = "HIGHSCORE: " + PlayerPrefs.GetInt("highscore");
     }
 
     public void RestartGame()
