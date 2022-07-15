@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1314896}
   - component: {fileID: 1314895}
   - component: {fileID: 1314897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,6 +259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 377215c2a3817df448b882f1febe99f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 1762861204}
 --- !u!1 &415488419
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 415488421}
   - component: {fileID: 415488420}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415488419}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.035837248, y: -0.09310551, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -531,7 +533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 773768776}
   - component: {fileID: 773768777}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Centre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,8 +831,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66380935227686b48924aea4fecfad36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRange: {x: 2, y: 0}
+  spawnRangeEnemy: {x: 2, y: 0}
+  spawnRangePoint: {x: 1.5, y: 0}
   enemy: {fileID: 3581551549761091013, guid: d75f251235dcff248869eb42b98b41a0, type: 3}
+  point: {fileID: 4041567430218032809, guid: a54b6407978e372479241903bcf9ae65, type: 3}
+--- !u!1 &1762861202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1762861203}
+  - component: {fileID: 1762861205}
+  - component: {fileID: 1762861204}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1762861203
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762861202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1831135559}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 783}
+  m_SizeDelta: {x: 213.65, y: 194.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1762861204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762861202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.82452834, g: 0.88221765, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: b5fdd93af8991d64d92a35c58191f842, type: 3}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 105
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &1762861205
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762861202}
+  m_CullTransparentMesh: 1
 --- !u!1 &1831135555
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +991,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -924,6 +1008,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1183895820}
+  - {fileID: 1762861203}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
