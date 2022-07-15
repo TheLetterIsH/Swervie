@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerEventController : MonoBehaviour
 {
@@ -23,10 +24,8 @@ public class PlayerEventController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            score = 0;
-            scoreText.text = score.ToString();
-            Destroy(collision.gameObject);
-
+            PlayerPrefs.SetInt("score", score);
+            SceneManager.LoadScene(2);
         }
 
     }
