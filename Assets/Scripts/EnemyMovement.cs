@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float movesSpeed;
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        transform.Translate(0, -movesSpeed * Time.deltaTime, 0); 
     }
 }
