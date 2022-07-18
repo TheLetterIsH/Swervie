@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 550}
-  m_SizeDelta: {x: 1022.61, y: 575.21}
+  m_AnchoredPosition: {x: 0, y: 560}
+  m_SizeDelta: {x: 967.4, y: 544.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &437996843
 MonoBehaviour:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 85e93191349c5234a815c13056400b34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30258c2aa4d009f4ebfc7e14f0e7753f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -236,7 +236,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.2, g: 0.24705882, b: 0.34509805, a: 0}
+  m_BackGroundColor: {r: 0.07058824, g: 0.08627451, b: 0.11372549, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 305949967cb50524ea0e1bfa280931c6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 876e05d692703ab49b7bbc9abb378040, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
