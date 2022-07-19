@@ -262,6 +262,8 @@ MonoBehaviour:
   score: 0
   scoreText: {fileID: 1762861204}
   SceneTransition: {fileID: 1850276629}
+  centre: {fileID: 773768775}
+  points: {fileID: 0}
 --- !u!1 &415488419
 GameObject:
   m_ObjectHideFlags: 0

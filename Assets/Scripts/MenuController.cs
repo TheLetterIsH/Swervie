@@ -16,7 +16,7 @@ public class MenuController : MonoBehaviour
     {
         SceneTransition.SetTrigger("Start");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         SceneManager.LoadScene(1);
     }
