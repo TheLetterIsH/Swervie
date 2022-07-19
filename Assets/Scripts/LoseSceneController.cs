@@ -8,6 +8,7 @@ public class LoseSceneController : MonoBehaviour
 {
     [SerializeField] private Text scoreText;
     [SerializeField] private Text highscoreText;
+    public Animator SceneTransition;
 
     private void Start()
     {
@@ -18,10 +19,19 @@ public class LoseSceneController : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(1);        
+        StartCoroutine(LoadLevel(1));       
     }
     public void QuitToMenu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadLevel(0));
+    }
+
+    IEnumerator LoadLevel(int sceneIndex)
+    {
+        SceneTransition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(sceneIndex);
     }
 }

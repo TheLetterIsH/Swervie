@@ -8,6 +8,7 @@ public class PlayerEventController : MonoBehaviour
 {
     [SerializeField] private int score;
     [SerializeField] private Text scoreText;
+    public Animator SceneTransition;
 
     private void Awake()
     {
@@ -25,13 +26,25 @@ public class PlayerEventController : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            
             PlayerPrefs.SetInt("score", score);
             if (score > PlayerPrefs.GetInt("highscore"))
             {
                 PlayerPrefs.SetInt("highscore", score);
             }
-            SceneManager.LoadScene(2);
+            StartCoroutine("LoadLevel");
         }
 
+    }
+
+    IEnumerator LoadLevel()
+    {
+        SceneTransition.SetTrigger("Start");
+
+
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene(2);
     }
 }
