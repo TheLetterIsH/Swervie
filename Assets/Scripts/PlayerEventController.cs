@@ -15,6 +15,9 @@ public class PlayerEventController : MonoBehaviour
     [SerializeField] public GameObject pointParticles;
     [SerializeField] public GameObject playerParticles;
 
+    [SerializeField] public AudioSource collect;
+    [SerializeField] public AudioSource death;
+
     private ScreenShake screenShake;
 
     private void Start()
@@ -33,6 +36,8 @@ public class PlayerEventController : MonoBehaviour
         {
             screenShake.CamShake();
 
+            collect.Play();
+
             GameObject pointFX = Instantiate(pointParticles, collision.gameObject.transform.position, Quaternion.identity);
 
             pointFX.GetComponent<ParticleSystem>().Play();
@@ -46,6 +51,8 @@ public class PlayerEventController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             screenShake.CamShake();
+
+            death.Play();
 
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
