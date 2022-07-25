@@ -13,6 +13,7 @@ public class PlayerEventController : MonoBehaviour
     [SerializeField] public GameObject centre;
 
     [SerializeField] public GameObject pointParticles;
+    [SerializeField] public GameObject playerParticles;
 
     private void Awake()
     {
@@ -23,9 +24,9 @@ public class PlayerEventController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Point"))
         {
-            GameObject particles = Instantiate(pointParticles, collision.gameObject.transform.position, Quaternion.identity);
+            GameObject pointFX = Instantiate(pointParticles, collision.gameObject.transform.position, Quaternion.identity);
 
-            particles.GetComponent<ParticleSystem>().Play();
+            pointFX.GetComponent<ParticleSystem>().Play();
 
             score++;
             scoreText.text = score.ToString();
@@ -35,6 +36,11 @@ public class PlayerEventController : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+            GameObject playerFX = Instantiate(playerParticles, gameObject.transform.position, Quaternion.identity);
+
+            playerFX.GetComponent<ParticleSystem>().Play();
 
             PlayerPrefs.SetInt("score", score);
             if (score > PlayerPrefs.GetInt("highscore"))
@@ -51,7 +57,7 @@ public class PlayerEventController : MonoBehaviour
     {
         SceneTransition.SetTrigger("Start");
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.75f);
 
         SceneManager.LoadScene(2);
     }
