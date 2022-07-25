@@ -263,7 +263,7 @@ MonoBehaviour:
   scoreText: {fileID: 1762861204}
   SceneTransition: {fileID: 1850276629}
   centre: {fileID: 773768775}
-  points: {fileID: 0}
+  pointParticles: {fileID: 3715626357978033817, guid: 60b4b453f6626f34094a86fc22276d3b, type: 3}
 --- !u!1 &415488419
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +709,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 1920}
+  m_SizeDelta: {x: 1080, y: 2500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1183895821
 MonoBehaviour:
@@ -1129,7 +1129,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &1831135559
 RectTransform:

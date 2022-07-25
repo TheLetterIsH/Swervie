@@ -12,6 +12,8 @@ public class PlayerEventController : MonoBehaviour
     
     [SerializeField] public GameObject centre;
 
+    [SerializeField] public GameObject pointParticles;
+
     private void Awake()
     {
         score = 0;   
@@ -21,6 +23,10 @@ public class PlayerEventController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Point"))
         {
+            GameObject particles = Instantiate(pointParticles, collision.gameObject.transform.position, Quaternion.identity);
+
+            particles.GetComponent<ParticleSystem>().Play();
+
             score++;
             scoreText.text = score.ToString();
 
