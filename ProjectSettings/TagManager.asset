@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Point
   - Enemy
+  - ScreenShake
   layers:
   - Default
   - TransparentFX

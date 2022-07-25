@@ -15,6 +15,13 @@ public class PlayerEventController : MonoBehaviour
     [SerializeField] public GameObject pointParticles;
     [SerializeField] public GameObject playerParticles;
 
+    private ScreenShake screenShake;
+
+    private void Start()
+    {
+        screenShake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<ScreenShake>();
+    }
+
     private void Awake()
     {
         score = 0;   
@@ -24,6 +31,8 @@ public class PlayerEventController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Point"))
         {
+            screenShake.CamShake();
+
             GameObject pointFX = Instantiate(pointParticles, collision.gameObject.transform.position, Quaternion.identity);
 
             pointFX.GetComponent<ParticleSystem>().Play();
@@ -36,6 +45,8 @@ public class PlayerEventController : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            screenShake.CamShake();
+
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
 
             GameObject playerFX = Instantiate(playerParticles, gameObject.transform.position, Quaternion.identity);
